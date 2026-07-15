@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stayfinder-ingress
+  namespace: stayfinder
+spec:
+  ingressClassName: nginx
+
+  rules:
+  - host: stayfinder.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stayfinder-service
+            port:
+              number: 80
