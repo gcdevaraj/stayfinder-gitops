@@ -19,7 +19,7 @@ spec:
       containers:
       - name: stayfinder
 
-        image: devaraj74/stayfinder-py:15
+        image: devaraj74/stayfinder-py:16
 
         imagePullPolicy: Always
 
