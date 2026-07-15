@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stayfinder
+  namespace: stayfinder
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: stayfinder
+
+  template:
+    metadata:
+      labels:
+        app: stayfinder
+
+    spec:
+      containers:
+      - name: stayfinder
+
+        image: devaraj74/stayfinder-py:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 4000
